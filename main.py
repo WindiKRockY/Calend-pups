@@ -21,7 +21,7 @@ class Widget(QMainWindow):
         self.ui.start_btn.clicked.connect(self.media_play)
         self.ui.stop_btn.clicked.connect(self.media_stop)
         self.ui.calendarWidget.selectionChanged.connect(self.get_date)
-
+        self.ui.Autostart_btn.clicked.connect(self.auto_play)
 
 
     def get_date(self):
@@ -36,7 +36,13 @@ class Widget(QMainWindow):
 
     def media_stop(self):
         self.media.stop()
-
+        
+    def auto_play(self):
+        self.checkBox = self.auto_play(QtWidgets.QCheckBox)
+        if self.checkBox.isChecked()
+            self.media_play()
+        
+        
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
